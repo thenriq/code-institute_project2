@@ -5,3 +5,29 @@ body {
     font-family: 'Oswald', sans-serif;
     font-family: 'Work Sans', sans-serif;
 }
+
+.heading {
+    display: block;
+    background-color: blueviolet;
+    height: 30px;
+    width: 80%;
+    max-width: 1200px;
+    text-align: center;
+    margin: auto;
+    margin-top: 30px;
+    padding: 2% 0;
+    
+
+}
+.game-area {
+    height: 80%;
+    width: 80%;
+    max-width: 1200px;
+    background-color: aqua;
+    position: relative;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
