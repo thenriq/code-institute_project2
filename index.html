@@ -14,7 +14,14 @@
     
     <div class="game-area">
         <div class="left-area">
-            <div class="guessing-area">Guessing area here</div>
+            <div class="guessing-area">
+                <form action="">
+                    <input type="text" class="nums" id="num1" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');"/>
+                    <input type="text" class="nums" id="num2" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');"/>
+                    <input type="text" class="nums" id="num3" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');"/>
+                    <input type="text" class="nums" id="num4" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');"/>
+                </form>
+            </div>
         </div>
         <div class="right-area">
             <div class="game-rules">game rules here</div>
