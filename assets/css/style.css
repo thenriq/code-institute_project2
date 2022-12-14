@@ -53,3 +53,10 @@ body {
     text-align: center;
     font-size: xxx-large;
   }
+
+  .form-num:focus {
+    background-color: #c5bcbc;
+    border-color: #3c4417;
+    color: #3d3d41;
+    
+}
