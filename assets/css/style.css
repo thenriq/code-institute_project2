@@ -72,26 +72,60 @@ body {
     padding: 30px;
 }
 
+.fa-solid {
+    padding-right: 20px;
+    font-size: xx-large;
+}
+
+.green-num {
+    color: #17f217;
+}
+
+.orange-num {
+    color: #ffa000;
+}
+
+.red-num {
+    color: red;
+}
+
 .game-rules>p {
     font-size: x-large;
     font-weight: bold;
 }
 
-.fa-square {
-    padding-right: 20px;
+.control-buttons {
+    text-align: center;
 }
 
-.green-num {
-    color: #17f217;
-    font-size: xx-large;
+.btn {
+    width: 220px;
+    height: 60px;
+    font-family: "Work Sans", sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: white;
 }
 
-.orange-num {
-    color: #ffa000;
-    font-size: xx-large;
+.btn--gray {
+    margin-top: 25px;
+    background-color: #445361;
+    border: 1px transparent;
+    border-radius: 20px;
 }
 
-.red-num {
-    color: red;
-    font-size: xx-large;
+.btn--gray:active,
+.btn--gray:hover {
+    background-color: #0d1013;
+}
+
+.alert-info {
+    text-align: left;
+    padding-left: 30px;
+    padding-top: 30px;
+}
+
+.fa-circle-exclamation {
+    color: orange;
 }
