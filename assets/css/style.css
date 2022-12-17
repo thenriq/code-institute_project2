@@ -47,16 +47,6 @@ body {
     padding-top: 30px;
 }
 
-
-
-.right-area{
-    width: 50%;
-    height: 600px;
-    background-color: rgb(28, 90, 161);
-    float: left;
-}
-
-
 .form-num {
     height: 60px;
     width: 60px;
@@ -69,5 +59,39 @@ body {
     background-color: #c5bcbc;
     border-color: #3c4417;
     color: #3d3d41;
-    
+}
+
+.right-area{
+    width: 50%;
+    height: 600px;
+    background-color: rgb(28, 90, 161);
+    float: left;
+}
+
+.game-rules {
+    padding: 30px;
+}
+
+.game-rules>p {
+    font-size: x-large;
+    font-weight: bold;
+}
+
+.fa-square {
+    padding-right: 20px;
+}
+
+.green-num {
+    color: #17f217;
+    font-size: xx-large;
+}
+
+.orange-num {
+    color: #ffa000;
+    font-size: xx-large;
+}
+
+.red-num {
+    color: red;
+    font-size: xx-large;
 }
