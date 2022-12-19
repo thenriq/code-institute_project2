@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", function(){
         button.addEventListener("click", function(){
             if (this.getAttribute("data-type") === "submit") {
                 alert("You clicked Submit!");
+                
             } else {
                 let option = this.getAttribute("data-type");
                 alert(`You clicked ${option}`);
@@ -16,3 +17,11 @@ document.addEventListener("DOMContentLoaded", function(){
     }
 })
 
+/**
+ * The main game "loop", called when the script is first loaded
+ * and after the user's answer has been processed
+ */
+function runGame() {
+    let secretPin = Array.from({length: 6}, () => Math.floor(Math.random() * 10));
+    
+}
