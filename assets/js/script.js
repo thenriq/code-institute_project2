@@ -8,6 +8,8 @@ document.addEventListener("DOMContentLoaded", function(){
             if (this.getAttribute("data-type") === "submit") {
                 //alert("You clicked Submit!");
                 runGame();
+                //incrementDiv();
+                
             } else {
                 let option = this.getAttribute("data-type");
                 alert(`You clicked ${option}`);
@@ -15,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function(){
         })
     }
     createDiv();
-    autoTab();
+    
 
         
 })
@@ -26,7 +28,8 @@ document.addEventListener("DOMContentLoaded", function(){
  */
 function runGame() {
     let secretPin = Array.from({length: 4}, () => Math.floor(Math.random() * 10));
-    console.log(secretPin);
+    alert(secretPin);
+    incrementDiv();
     
 }
 
@@ -40,9 +43,24 @@ function createDiv() {
                 <input type="text" class="form-num" id="num3" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');"/>
                 <input type="text" class="form-num" id="num4" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');"/>
             </form>
-        </div>`;  
+        </div>`;
+    autoTab();  
   
 };
+
+function incrementDiv() {
+    const container = document.getElementById('guessing-area');
+    container.innerHTML+=`
+        <div class="guessing-row" id="guessing-row1">
+            <form action="">
+                <input type="text" class="form-num" id="num1" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');"/>
+                <input type="text" class="form-num" id="num2" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');"/>
+                <input type="text" class="form-num" id="num3" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');"/>
+                <input type="text" class="form-num" id="num4" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');"/>
+            </form>
+        </div>`;
+    autoTab();  
+}
 
 function autoTab() {
     $(".form-num").keyup(function () {
@@ -53,8 +71,6 @@ function autoTab() {
           else
             $(".check-answer").focus();  
             $(this).blur();
-              
-              
         }
         
     });
