@@ -22,6 +22,6 @@ document.addEventListener("DOMContentLoaded", function(){
  * and after the user's answer has been processed
  */
 function runGame() {
-    let secretPin = Array.from({length: 6}, () => Math.floor(Math.random() * 10));
+    let secretPin = Array.from({length: 4}, () => Math.floor(Math.random() * 10));
     
 }
