@@ -3,13 +3,11 @@
 
 document.addEventListener("DOMContentLoaded", function(){
     let buttons = document.getElementsByTagName("button");
-
     for (let button of buttons) {
         button.addEventListener("click", function(){
             if (this.getAttribute("data-type") === "submit") {
                 //alert("You clicked Submit!");
-                
-                
+                runGame();
             } else {
                 let option = this.getAttribute("data-type");
                 alert(`You clicked ${option}`);
@@ -17,6 +15,9 @@ document.addEventListener("DOMContentLoaded", function(){
         })
     }
     createDiv();
+    autoTab();
+
+        
 })
 
 /**
@@ -25,11 +26,11 @@ document.addEventListener("DOMContentLoaded", function(){
  */
 function runGame() {
     let secretPin = Array.from({length: 4}, () => Math.floor(Math.random() * 10));
+    console.log(secretPin);
     
 }
 
 function createDiv() {
-   
     const container = document.getElementById('guessing-area');
     container.innerHTML=`
         <div class="guessing-row" id="guessing-row1">
@@ -42,3 +43,24 @@ function createDiv() {
         </div>`;  
   
 };
+
+function autoTab() {
+    $(".form-num").keyup(function () {
+        if (this.value.length == this.maxLength) {
+          var $next = $(this).next('.form-num');
+          if ($next.length)
+              $(this).next('.form-num').focus();
+          else
+            $(".check-answer").focus();  
+            $(this).blur();
+              
+              
+        }
+        
+    });
+
+    
+    
+}
+
+
