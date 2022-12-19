@@ -7,7 +7,8 @@ document.addEventListener("DOMContentLoaded", function(){
     for (let button of buttons) {
         button.addEventListener("click", function(){
             if (this.getAttribute("data-type") === "submit") {
-                alert("You clicked Submit!");
+                //alert("You clicked Submit!");
+                
                 
             } else {
                 let option = this.getAttribute("data-type");
@@ -15,6 +16,7 @@ document.addEventListener("DOMContentLoaded", function(){
             }
         })
     }
+    createDiv();
 })
 
 /**
@@ -25,3 +27,18 @@ function runGame() {
     let secretPin = Array.from({length: 4}, () => Math.floor(Math.random() * 10));
     
 }
+
+function createDiv() {
+   
+    const container = document.getElementById('guessing-area');
+    container.innerHTML=`
+        <div class="guessing-row" id="guessing-row1">
+            <form action="">
+                <input type="text" class="form-num" id="num1" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');"/>
+                <input type="text" class="form-num" id="num2" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');"/>
+                <input type="text" class="form-num" id="num3" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');"/>
+                <input type="text" class="form-num" id="num4" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');"/>
+            </form>
+        </div>`;  
+  
+};

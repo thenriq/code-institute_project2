@@ -39,7 +39,7 @@ body {
     float: left;
 }
 
-.guessing-area {
+#guessing-area {
     text-align: center;
 }
 
