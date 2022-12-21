@@ -52,14 +52,56 @@ function createDiv() {
                 <input type="text" class="form-num" id="num4" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');"/>
             </form>
         </div>`;
+        
     autoTab();  
   
 };
 
 function incrementDiv() {
-    const container = document.getElementById('guessing-area');
+
+    Node.prototype.insertAfter = function(node, referenceNode) {
+    
+        if (node)
+            this.insertBefore(node, referenceNode && referenceNode.nextSibling);
+    
+        return node;
+    };
+    
+    var referenceNode,
+        newNode;
     let lastDiv = document.getElementById('guessing-area').lastChild;
+    console.log(lastDiv);
+
     let lastDivID = parseInt(lastDiv.id);
+    referenceNode = document.getElementById('guessing-area').lastChild;
+    //referenceNode = document.getElementById('guessing-area');
+    newNode = document.createElement('div');
+    newNode.className = "guessing-row";
+    newNode.id = (lastDivID + 1);
+    alert(newNode.id);
+    
+    newNode.innerHTML = `
+    <!-- <div class="guessing-row" id="${lastDivID + 1}"> -->
+        <form action="">
+            <input type="text" class="form-num" id="num1" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');"/>
+            <input type="text" class="form-num" id="num2" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');"/>
+            <input type="text" class="form-num" id="num3" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');"/>
+            <input type="text" class="form-num" id="num4" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');"/>
+        </form>
+    </div>`;
+    
+    
+    referenceNode.parentNode.insertAfter(newNode, referenceNode);
+    
+    
+    /*const container = document.getElementById('guessing-area');
+    //console.log(container);
+
+    let lastDiv = document.getElementById('guessing-area').lastChild;
+    console.log(lastDiv);
+
+    let lastDivID = parseInt(lastDiv.id);
+    
     
         container.innerHTML+=`
             <div class="guessing-row" id="${lastDivID + 1}">
@@ -69,8 +111,8 @@ function incrementDiv() {
                     <input type="text" class="form-num" id="num3" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');"/>
                     <input type="text" class="form-num" id="num4" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');"/>
                 </form>
-            </div>`;
-    
+            </div>`;*/
+            
     autoTab();  
 }
 
@@ -84,9 +126,10 @@ function autoTab() {
             $(".check-answer").focus();  
             $(this).blur();
         }
-        
+        $("#cmd").focus();
+        //$(this).first('.form-num').focus();
     });
-
+    document.getElementById("num1").focus();
 }
 
 
