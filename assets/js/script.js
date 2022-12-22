@@ -17,7 +17,9 @@ document.addEventListener("DOMContentLoaded", function(){
         })
     }
     createDiv();
+
     
+       
 
         
 })
@@ -52,25 +54,22 @@ function createDiv() {
                 <input type="text" class="form-num" id="num4" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');"/>
             </form>
         </div>`;
-        
+        document.getElementById("num1").focus()
     autoTab();  
   
 };
 
 function incrementDiv() {
-
     Node.prototype.insertAfter = function(node, referenceNode) {
-    
         if (node)
             this.insertBefore(node, referenceNode && referenceNode.nextSibling);
-    
         return node;
     };
     
     var referenceNode,
         newNode;
     let lastDiv = document.getElementById('guessing-area').lastChild;
-    console.log(lastDiv);
+    
 
     let lastDivID = parseInt(lastDiv.id);
     referenceNode = document.getElementById('guessing-area').lastChild;
@@ -93,31 +92,40 @@ function incrementDiv() {
     
     referenceNode.parentNode.insertAfter(newNode, referenceNode);
     
-    
-    /*const container = document.getElementById('guessing-area');
-    //console.log(container);
-
-    let lastDiv = document.getElementById('guessing-area').lastChild;
-    console.log(lastDiv);
-
-    let lastDivID = parseInt(lastDiv.id);
-    
-    
-        container.innerHTML+=`
-            <div class="guessing-row" id="${lastDivID + 1}">
-                <form action="">
-                    <input type="text" class="form-num" id="num1" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');"/>
-                    <input type="text" class="form-num" id="num2" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');"/>
-                    <input type="text" class="form-num" id="num3" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');"/>
-                    <input type="text" class="form-num" id="num4" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');"/>
-                </form>
-            </div>`;*/
-            
     autoTab();  
 }
 
 function autoTab() {
-    $(".form-num").keyup(function () {
+        let last = document.getElementById('guessing-area').lastChild;
+        let lastID = parseInt(last.id);
+        var container = document.getElementsByClassName("guessing-row")[lastID - 1];
+        console.log(container);
+        container.onkeyup = function(jump) {
+        var locate = jump.target;
+        
+        var next = locate;
+        
+            while (next = next.nextElementSibling) {
+                if (next == null)
+                break;
+                
+                if (next.tagName.toLowerCase() == "input") {
+                    next.focus();
+                    
+                    
+                    break;
+                    
+                }
+              
+                
+            }
+            if (event.key === "Enter") {
+                runGame();
+            }
+            
+            
+            
+    /*$(".form-num").keyup(function () {
         if (this.value.length == this.maxLength) {
           var $next = $(this).next('.form-num');
           if ($next.length)
@@ -129,8 +137,16 @@ function autoTab() {
         $("#cmd").focus();
         //$(this).first('.form-num').focus();
     });
-    document.getElementById("num1").focus();
+    document.getElementById("num1").focus();*/
+    
 }
 
+}
+
+function keyPressListener(e) {
+    if (e.keyCode == 13) {
+             document.getElementsByClassName("check-answer").focus();
+}
+}
 
 
