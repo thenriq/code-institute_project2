@@ -36,6 +36,8 @@ function runGame() {
     let lastDivID = parseInt(lastDiv.id);
     if ((lastDivID) < 6) {
         incrementDiv();
+        
+
     } else {
         alert("game over. Page will refresh.");
         alert(lastDivID);
@@ -47,12 +49,12 @@ function createDiv() {
     const container = document.getElementById('guessing-area');
     container.innerHTML=`
         <div class="guessing-row" id="1">
-            <form action="">
+            
                 <input type="text" class="form-num" id="num1" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');"/>
                 <input type="text" class="form-num" id="num2" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');"/>
                 <input type="text" class="form-num" id="num3" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');"/>
                 <input type="text" class="form-num" id="num4" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');"/>
-            </form>
+            
         </div>`;
         document.getElementById("num1").focus()
     autoTab();  
@@ -70,7 +72,6 @@ function incrementDiv() {
         newNode;
     let lastDiv = document.getElementById('guessing-area').lastChild;
     
-
     let lastDivID = parseInt(lastDiv.id);
     referenceNode = document.getElementById('guessing-area').lastChild;
     //referenceNode = document.getElementById('guessing-area');
@@ -80,17 +81,19 @@ function incrementDiv() {
     alert(newNode.id);
     
     newNode.innerHTML = `
-    <!-- <div class="guessing-row" id="${lastDivID + 1}"> -->
-        <form action="">
-            <input type="text" class="form-num" id="num1" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');"/>
+            <input type="text" class="form-num" id="num1" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');">
             <input type="text" class="form-num" id="num2" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');"/>
             <input type="text" class="form-num" id="num3" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');"/>
             <input type="text" class="form-num" id="num4" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');"/>
-        </form>
     </div>`;
     
     
     referenceNode.parentNode.insertAfter(newNode, referenceNode);
+    //console.log(newNode);
+    x = newNode.getElementsByTagName("input")[0];
+    console.log(x);
+    x.focus();
+    //referenceNode.getElementsByTagName("input")[0].focus;
     
     autoTab();  
 }
@@ -120,8 +123,36 @@ function autoTab() {
                 
             }
             if (event.key === "Enter") {
+
+                var inputs = container.getElementsByTagName("input");
+                console.log(inputs);
+			    var values = {}
+                for (const input of inputs){
+                    values[input.name] = input.value
+                    console.log(values);
+                }
+                
+                
+                
+                
+                
+                //let labels = document.querySelectorAll(".guessing-row");
+                //let input1 = labels[0].querySelector("input").value;
+                /*let input2 = labels[1].querySelector("input").value;
+                let input3 = labels[2].querySelector("input").value;
+                let input4 = labels[3].querySelector("input").value;*/
+
+                //console.log(`Input 1: ${input1}`);
+                //console.log(`Input 2: ${input2}`);
+                //console.log(`label: ${labels}`);
+                //console.log(input1);
+
+                //test = container[0].childNodes.value;
+                //console.log(test);
+               
                 runGame();
             }
+            
             
             
             
@@ -141,12 +172,17 @@ function autoTab() {
     
 }
 
+
 }
 
-function keyPressListener(e) {
+/*function keyPressListener(e) {
+    inputNotNull = document.getElementsByClassName("form-num");
     if (e.keyCode == 13) {
+        console.log(inputNotNull);
              document.getElementsByClassName("check-answer").focus();
+             console.log("enter was pressed");
+             
 }
-}
+}*/
 
 
