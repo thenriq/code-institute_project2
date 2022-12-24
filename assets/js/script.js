@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function(){
     }
 
     
-
+    window.secretPin = Array.from({length: 4}, () => Math.floor(Math.random() * 10));
     createDiv();
 
     
@@ -37,9 +37,10 @@ document.addEventListener("DOMContentLoaded", function(){
 function runGame() {
     //let last = document.getElementById('guessing-area').lastChild;
     //let lastID = parseInt(last.id);
+    //secretPin = window.secretPin;
     
-    var secretPin = Array.from({length: 4}, () => Math.floor(Math.random() * 10));
-    console.log(secretPin);
+    
+    console.log(window.secretPin);
     
     
 
@@ -65,12 +66,12 @@ function runGame() {
     for(let i = 0; i < values.length; i++) {
          
         // Loop for array2
-        for(let j = 0; j < secretPin.length; j++) {
+        for(let j = 0; j < window.secretPin.length; j++) {
         
             // Compare the element of each and
             // every element from both of the
             // arrays
-            if(values[i] === secretPin[j]) {
+            if(values[i] === window.secretPin[j]) {
                 /*console.log(i);
                 console.log(j);*/
                 console.log("item ",i,"will be orange");
