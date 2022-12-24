@@ -39,7 +39,7 @@ function runGame() {
     //let lastID = parseInt(last.id);
     
     var secretPin = Array.from({length: 4}, () => Math.floor(Math.random() * 10));
-    alert(secretPin);
+    console.log(secretPin);
     
     
 
@@ -47,14 +47,48 @@ function runGame() {
     let lastDivID = parseInt(lastDiv.id);
     var container = document.getElementsByClassName("guessing-row")[lastDivID - 1];
 
-    var inputs = container.getElementsByTagName("input");
-    console.log(inputs);
-    var values = []
-    for (const input of inputs){
-        values[input.name] = input.value
-        
-        console.log(values);
+    let values = [];
+    for (let i = 0; i < 4; i++) {
+        var inputs = container.getElementsByTagName("input")[i];
+        /*console.log(inputs.value);*/
+        values[i] = parseInt(inputs.value);
     }
+    console.log(values);
+    //var values = [];
+    /*for (const input of inputs){
+        values[input.name] = parseInt(input.value);
+        
+        console.log(values[1]);
+    }*/
+    
+    // Loop for array1
+    for(let i = 0; i < values.length; i++) {
+         
+        // Loop for array2
+        for(let j = 0; j < secretPin.length; j++) {
+        
+            // Compare the element of each and
+            // every element from both of the
+            // arrays
+            if(values[i] === secretPin[j]) {
+                /*console.log(i);
+                console.log(j);*/
+                console.log("item ",i,"will be orange");
+                if (i == j) {
+                    console.log("item ", i, "will be green");
+                }
+                
+             
+                // Return if common element found
+            } else {
+                console.log("item ", i, "will be red");
+            }
+        }
+    }
+     
+    // Return if no common element exist
+    
+    
 
     
 
