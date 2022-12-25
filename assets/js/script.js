@@ -21,7 +21,8 @@ document.addEventListener("DOMContentLoaded", function(){
     }
 
     
-    window.secretPin = Array.from({length: 4}, () => Math.floor(Math.random() * 10));
+    //window.secretPin = Array.from({length: 4}, () => Math.floor(Math.random() * 10));
+    window.secretPin = [1,2,3,4];
     createDiv();
 
     
@@ -51,17 +52,13 @@ function runGame() {
     let values = [];
     for (let i = 0; i < 4; i++) {
         var inputs = container.getElementsByTagName("input")[i];
+        
+        
         /*console.log(inputs.value);*/
         values[i] = parseInt(inputs.value);
     }
     console.log(values);
-    //var values = [];
-    /*for (const input of inputs){
-        values[input.name] = parseInt(input.value);
         
-        console.log(values[1]);
-    }*/
-    
     // Loop for array1
     for(let i = 0; i < values.length; i++) {
          
@@ -71,19 +68,29 @@ function runGame() {
             // Compare the element of each and
             // every element from both of the
             // arrays
-            if(values[i] === window.secretPin[j]) {
+            if ((values[i] === window.secretPin[j]) && ((i == j))) {
+
                 /*console.log(i);
                 console.log(j);*/
-                console.log("item ",i,"will be orange");
-                if (i == j) {
-                    console.log("item ", i, "will be green");
+                //console.log("item ",i,"will be orange");
+               // if (i == j) {
+                    console.log("item ", values[i], "will be green");
+                    container.getElementsByTagName("input")[i].style.color = '#17F217';
+                    break;
+                //} 
+            }
+            else if ((values[i] === window.secretPin[j]) && ((i != j))){
+                    console.log("item ",values[i],"will be orange");
+                    container.getElementsByTagName("input")[i].style.color = '#FFA000';
+                    break;
                 }
                 
              
                 // Return if common element found
-            } else {
-                console.log("item ", i, "will be red");
-            }
+            else //if ((values[i] === window.secretPin[j]) && ((i != j))){
+                console.log("item ", values[i], "will be red");
+                container.getElementsByTagName("input")[i].style.color = '#FF0000';
+            //}
         }
     }
      
