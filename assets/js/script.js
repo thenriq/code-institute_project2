@@ -21,8 +21,8 @@ document.addEventListener("DOMContentLoaded", function(){
     }
 
     
-    //window.secretPin = Array.from({length: 4}, () => Math.floor(Math.random() * 10));
-    window.secretPin = [1,2,3,4];
+    window.secretPin = Array.from({length: 4}, () => Math.floor(Math.random() * 10));
+    //window.secretPin = [1,2,3,4];
     createDiv();
 
     
