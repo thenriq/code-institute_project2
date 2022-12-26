@@ -15,7 +15,8 @@ document.addEventListener("DOMContentLoaded", function(){
                 
             } else {
                 let option = this.getAttribute("data-type");
-                alert(`You clicked ${option}`);
+                resetGame();
+                //alert(`You clicked ${option}`);
             }
         })
     }
@@ -94,8 +95,9 @@ function runGame() {
             //}
         }
         if (control == 4) {
-            alert("you win!");
-            window.location.reload(false);
+            playAgainWin();
+            //alert("you win!");
+            //window.location.reload(false);
             break;
         }
     }
@@ -106,15 +108,17 @@ function runGame() {
 
     
 
+    if (control != 4) {
+        if ((lastDivID) < 6){
+            incrementDiv();
+            
 
-    if ((lastDivID) < 6) {
-        incrementDiv();
-        
-
-    } else {
-        alert("game over. Page will refresh.");
-        alert(lastDivID);
-        window.location.reload(false);
+        } else {
+            /*alert("game over. Page will refresh.");
+            alert(lastDivID);
+            window.location.reload(false);*/
+            playAgainLose();
+        }
     }
 }
 
@@ -222,6 +226,36 @@ function autoTab() {
 }
 
 
+}
+
+function playAgainWin() {
+    let confirmOpt = confirm("You win. Play again?");
+    if (confirmOpt) {
+        window.location.reload(false);
+
+    } else {
+        alert("Thank you for playing");
+    }
+}
+
+function playAgainLose() {
+    let confirmOpt = confirm("You've lost. Play again?");
+    if (confirmOpt) {
+        window.location.reload(false);
+
+    } else {
+        alert("Thank you for playing");
+    }
+}
+
+function resetGame() {
+    let confirmOpt = confirm("Are you sure you want to reset?");
+    if (confirmOpt) {
+        window.location.reload(false);
+
+    } else {
+        alert("Have a nice day!");
+    }
 }
 
 /*function keyPressListener(e) {
