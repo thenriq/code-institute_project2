@@ -95,7 +95,7 @@ function runGame() {
         }
         if (control == 4) {
             alert("you win!");
-            window.location.reload();
+            window.location.reload(false);
             break;
         }
     }
@@ -114,7 +114,7 @@ function runGame() {
     } else {
         alert("game over. Page will refresh.");
         alert(lastDivID);
-        window.location.reload();
+        window.location.reload(false);
     }
 }
 
