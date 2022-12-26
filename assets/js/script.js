@@ -39,7 +39,7 @@ function runGame() {
     //let last = document.getElementById('guessing-area').lastChild;
     //let lastID = parseInt(last.id);
     //secretPin = window.secretPin;
-    
+    let control = 0;
     
     console.log(window.secretPin);
     
@@ -69,12 +69,13 @@ function runGame() {
             // every element from both of the
             // arrays
             if ((values[i] === window.secretPin[j]) && ((i == j))) {
-
+                
                 /*console.log(i);
                 console.log(j);*/
                 //console.log("item ",i,"will be orange");
                // if (i == j) {
                     console.log("item ", values[i], "will be green");
+                    console.log("control: ",control += 1);
                     container.getElementsByTagName("input")[i].style.color = '#17F217';
                     break;
                 //} 
@@ -91,6 +92,11 @@ function runGame() {
                 console.log("item ", values[i], "will be red");
                 container.getElementsByTagName("input")[i].style.color = '#FF0000';
             //}
+        }
+        if (control == 4) {
+            alert("you win!");
+            window.location.reload();
+            break;
         }
     }
      
