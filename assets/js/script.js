@@ -100,6 +100,8 @@ function runGame() {
             //window.location.reload(false);
             break;
         }
+        //document.getElementById('foo').disabled = true;
+        container.getElementsByTagName("input")[i].disabled = true;
     }
      
     // Return if no common element exist
