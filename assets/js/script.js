@@ -42,7 +42,7 @@ function runGame() {
     //secretPin = window.secretPin;
     let control = 0;
     
-    console.log(window.secretPin);
+    //console.log(window.secretPin);
     
     
 
@@ -58,7 +58,7 @@ function runGame() {
         /*console.log(inputs.value);*/
         values[i] = parseInt(inputs.value);
     }
-    console.log(values);
+    //console.log(values);
         
     // Loop for array1
     for(let i = 0; i < values.length; i++) {
@@ -75,14 +75,14 @@ function runGame() {
                 console.log(j);*/
                 //console.log("item ",i,"will be orange");
                // if (i == j) {
-                    console.log("item ", values[i], "will be green");
-                    console.log("control: ",control += 1);
+                    //console.log("item ", values[i], "will be green");
+                    //console.log("control: ",control += 1);
                     container.getElementsByTagName("input")[i].style.color = '#17F217';
                     break;
                 //} 
             }
             else if ((values[i] === window.secretPin[j]) && ((i != j))){
-                    console.log("item ",values[i],"will be orange");
+                    //console.log("item ",values[i],"will be orange");
                     container.getElementsByTagName("input")[i].style.color = '#FFA000';
                     break;
                 }
@@ -90,7 +90,7 @@ function runGame() {
              
                 // Return if common element found
             else //if ((values[i] === window.secretPin[j]) && ((i != j))){
-                console.log("item ", values[i], "will be red");
+                //console.log("item ", values[i], "will be red");
                 container.getElementsByTagName("input")[i].style.color = '#FF0000';
             //}
         }
@@ -157,7 +157,7 @@ function incrementDiv() {
     newNode = document.createElement('div');
     newNode.className = "guessing-row";
     newNode.id = (lastDivID + 1);
-    alert(newNode.id);
+    //alert(newNode.id);
     
     newNode.innerHTML = `
             <input type="text" class="form-num" id="num1" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');">
@@ -170,7 +170,7 @@ function incrementDiv() {
     referenceNode.parentNode.insertAfter(newNode, referenceNode);
     //console.log(newNode);
     x = newNode.getElementsByTagName("input")[0];
-    console.log(x);
+    //console.log(x);
     x.focus();
     //referenceNode.getElementsByTagName("input")[0].focus;
     
@@ -181,7 +181,7 @@ function autoTab() {
         let last = document.getElementById('guessing-area').lastChild;
         let lastID = parseInt(last.id);
         var container = document.getElementsByClassName("guessing-row")[lastID - 1];
-        console.log(container);
+        //console.log(container);
         container.onkeyup = function(jump) {
         var locate = jump.target;
         
@@ -269,4 +269,3 @@ function resetGame() {
              
 }
 }*/
-
