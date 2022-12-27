@@ -233,6 +233,7 @@ function playAgainWin() {
 
 function playAgainLose() {
     let confirmOpt = confirm("You've lost. Play again?");
+    alert("The secret pin number was " + window.secretPin);
     if (confirmOpt) {
         window.location.reload(false);
 
