@@ -22,8 +22,8 @@ document.addEventListener("DOMContentLoaded", function(){
     }
 
     
-    window.secretPin = Array.from({length: 4}, () => Math.floor(Math.random() * 10));
-    //window.secretPin = [1,2,3,4];
+    //window.secretPin = Array.from({length: 4}, () => Math.floor(Math.random() * 10));
+    window.secretPin = [1,2,1,2];
     createDiv();
 
     
@@ -39,10 +39,10 @@ document.addEventListener("DOMContentLoaded", function(){
 function runGame() {
     //let last = document.getElementById('guessing-area').lastChild;
     //let lastID = parseInt(last.id);
-    //secretPin = window.secretPin;
+    const secretPin = window.secretPin;
     let control = 0;
     
-    //console.log(window.secretPin);
+    console.log(window.secretPin);
     
     
 
@@ -65,48 +65,39 @@ function runGame() {
          
         // Loop for array2
         for(let j = 0; j < window.secretPin.length; j++) {
-        
-            // Compare the element of each and
-            // every element from both of the
-            // arrays
-            if ((values[i] === window.secretPin[j]) && ((i == j))) {
+            if (values[i] === window.secretPin[j]) { 
                 
-                /*console.log(i);
-                console.log(j);*/
-                //console.log("item ",i,"will be orange");
-               // if (i == j) {
-                    //console.log("item ", values[i], "will be green");
-                    //console.log("control: ",control += 1);
-                    container.getElementsByTagName("input")[i].style.color = '#17F217';
-                    break;
-                //} 
-            }
-            else if ((values[i] === window.secretPin[j]) && ((i != j))){
-                    //console.log("item ",values[i],"will be orange");
+                    console.log("item ",i,"will be orange");
                     container.getElementsByTagName("input")[i].style.color = '#FFA000';
+                  
+            }
+
+            if (i === j) {
+                if (values[i] === window.secretPin[j]) {
+                    console.log("item ", values[i], "will be green");
+                    container.getElementsByTagName("input")[i].style.color = '#17F217';
+                    control += 1
                     break;
                 }
-                
-             
-                // Return if common element found
-            else //if ((values[i] === window.secretPin[j]) && ((i != j))){
-                //console.log("item ", values[i], "will be red");
+            }
+            if (!(secretPin.includes(values[i]))) {
+                console.log("item ", values[i], "will be red");
                 container.getElementsByTagName("input")[i].style.color = '#FF0000';
-            //}
+            }
+
+
+        
         }
         if (control == 4) {
             playAgainWin();
-            //alert("you win!");
-            //window.location.reload(false);
+            
             break;
         }
-        //document.getElementById('foo').disabled = true;
+       
         container.getElementsByTagName("input")[i].disabled = true;
     }
      
-    // Return if no common element exist
-    
-    
+  
 
     
 
@@ -116,9 +107,7 @@ function runGame() {
             
 
         } else {
-            /*alert("game over. Page will refresh.");
-            alert(lastDivID);
-            window.location.reload(false);*/
+            
             playAgainLose();
         }
     }
