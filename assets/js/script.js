@@ -90,11 +90,13 @@ function runGame() {
         }
         if (control == 4) {
             playAgainWin();
+            container.getElementsByTagName("input")[i].disabled = true;
             
             break;
         }
        
         container.getElementsByTagName("input")[i].disabled = true;
+        
     }
      
   
