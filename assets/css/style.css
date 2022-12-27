@@ -138,8 +138,9 @@ input:disabled {
 
 @media (max-width: 512px) {
     .heading {
-        width: 100%;  
-        padding: 2% 0;
+        width: 100%;
+        padding: 12% 0;
+        font-size: 30px;
     }
     
     .left-area{
