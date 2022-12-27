@@ -135,3 +135,19 @@ input:disabled {
 .fa-circle-exclamation {
     color: orange;
 }
+
+@media (max-width: 320px) {
+    .left-area{
+        width: 100%;
+    }
+
+    .form-num {
+        height: 30px;
+        width: 30px;
+        margin: 15px 15px;
+    }
+
+    .right-area {
+        float: none;
+    }
+}
