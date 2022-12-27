@@ -1,6 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&family=Work+Sans:wght@200;600&display=swap');
 /*@import url('https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css');*/
 
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
 body {
     background-color: white;
     font-family: 'Oswald', sans-serif;
@@ -45,6 +51,9 @@ body {
 
 .guessing-row {
     padding-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
 }
 
 .form-num {
@@ -52,7 +61,7 @@ body {
     width: 60px;
     text-align: center;
     font-size: xxx-large;
-    margin: 0 10px;
+    /*margin: 0 10px;*/
   }
 
   .form-num:focus {
@@ -173,5 +182,15 @@ input:disabled {
 
     .game-rules {
         padding: 5px 30px;
+    }
+}
+
+@media (max-width: 900px) {
+    .form-num {
+        height: 40px;
+        width: 40px;
+        text-align: center;
+        font-size: xx-large;
+        
     }
 }
