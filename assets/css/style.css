@@ -122,8 +122,8 @@ input:disabled {
 
 .btn--gray:active,
 .btn--gray:hover {
-    background-color: #ffffff;
-    color: #d2691e
+    background-color: #000000;
+    color: #d2691e;
 }
 
 .alert-info {
