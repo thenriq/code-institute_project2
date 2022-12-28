@@ -82,7 +82,9 @@ input:disabled {
 }
 
 .game-rules, .game-instructions {
-    padding: 10px 30px;
+    padding-top: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
 }
 
 .game-instructions > p {
@@ -157,6 +159,7 @@ input:disabled {
 .alert-info {
     text-align: left;
     padding-left: 30px;
+    padding-right: 30px;
     padding-top: 30px;
 }
 
@@ -200,7 +203,8 @@ input:disabled {
 @media (max-width: 625px) {
     .heading {
         width: 100%;
-        padding: 12% 0;
+        height: auto;
+        padding: 5% 0;
         font-size: 30px;
     }
     
