@@ -38,6 +38,16 @@ body {
     left: 0;
 }
 
+.fa-brain {
+    font-size: x-large;
+}
+
+.fa-brain:before {
+    content: "\f5dc";
+    color: greenyellow;
+    padding-right: 20px;
+}
+
 .left-area{
     width: 50%;
     height: 600px;
@@ -191,8 +201,10 @@ input:disabled {
     }
 
     .btn {
-        width: 100px;
+        width: 100%;
         font-size: 12px;
+        margin-left: 10px;
+        margin-right: 10px;
     }
 
     .alert-info > p {
