@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&family=Work+Sans:wght@200;600&display=swap');
-/*@import url('https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css');*/
 
+/*reseting all default settings*/
 * {
     margin: 0;
     padding: 0;
@@ -25,6 +25,8 @@ body {
     padding: 3% 0;
     color: white;
 }
+
+/*The game will not take up the full screen width on desktop*/
 .game-area {
     height: 80%;
     width: 80%;
@@ -38,16 +40,14 @@ body {
     left: 0;
 }
 
-.fa-brain {
-    font-size: x-large;
-}
-
+/*green brain icon from font-awesome in page heading*/
 .fa-brain:before {
     content: "\f5dc";
     color: greenyellow;
     padding-right: 20px;
 }
 
+/*The left area takes half of the game area*/
 .left-area{
     width: 50%;
     height: 600px;
@@ -59,6 +59,7 @@ body {
     text-align: center;
 }
 
+/*the row of input elements - player will enter values in here*/
 .guessing-row {
     padding-top: 30px;
     display: flex;
@@ -66,15 +67,16 @@ body {
     justify-content: space-around;
 }
 
+/*the input elements, sized to the shape of a square*/
 .form-num {
     height: 60px;
     width: 60px;
     text-align: center;
     font-size: xxx-large;
-    /*margin: 0 10px;*/
   }
 
-  .form-num:focus {
+/*special effect when focused in the input element*/
+.form-num:focus {
     background-color: #c5bcbc;
     border-color: #3c4417;
     color: #3d3d41;
@@ -84,6 +86,7 @@ input:disabled {
     background-color: #262626;
  }
 
+ /*The right area takes half of the game area*/
 .right-area{
     width: 50%;
     height: 600px;
@@ -91,6 +94,7 @@ input:disabled {
     float: left;
 }
 
+/*common settings for both sections*/
 .game-rules, .game-instructions {
     padding-top: 30px;
     padding-left: 30px;
@@ -105,11 +109,13 @@ input:disabled {
     text-align: center;
 }
 
+/*font-awesome class - used to represent the color squares at the left of each instruction*/
 .fa-solid {
     padding-right: 20px;
     font-size: xx-large;
 }
 
+/*The three next class sets the small square color of each instruction paragraph*/
 .green-num {
     color: #17f217;
 }
@@ -138,8 +144,8 @@ input:disabled {
 .btn {
     width: 100%;
     height: 60px;
-    margin-left: 30px;
-    margin-right: 30px;
+    margin-left: 10px;
+    margin-right: 10px;
     font-family: "Arial Nova Condensed", sans-serif;
     font-size: 16px;
     font-weight: bold;
@@ -152,21 +158,13 @@ input:disabled {
     border-radius: 20px;
 }
 
-/*.btn--gray {
-    margin-top: 25px;
-    background-color: #d2691e;
-    border: 1px transparent;
-    border-radius: 20px;
-}*/
-
-/*.btn--gray:active,*/
 .btn:active,
 .btn:hover {
-/*.btn--gray:hover {*/
     background-color: #000000;
     color: #d2691e;
 }
 
+/*text row at the end of the game with its own font-awesome icon*/
 .alert-info {
     text-align: left;
     padding-left: 30px;
@@ -181,9 +179,11 @@ input:disabled {
     color: white;
 }
 
+/*font-awesome icon for the text row at the end of the game*/
 .fa-circle-exclamation {
     color: orange;
 }
+
 
 @media (max-width: 900px) {
     .form-num {
@@ -191,12 +191,10 @@ input:disabled {
         width: 40px;
         text-align: center;
         font-size: xx-large;
-        
     }
 
     game-instructions > p {
     font-size: medium;
-    /* font-weight: bold; */
     padding-bottom: 20px;
     color: white;
     }
@@ -263,6 +261,5 @@ input:disabled {
         font-size: 14px;
         display: block;
         margin: 10px 0 10px 0;
-
     }
 }

@@ -3,118 +3,104 @@
 
 document.addEventListener("DOMContentLoaded", function(){
     let buttons = document.getElementsByTagName("button");
-
-    
-
     for (let button of buttons) {
         button.addEventListener("click", function(){
             if (this.getAttribute("data-type") === "submit") {
-                //alert("You clicked Submit!");
                 runGame();
-                //incrementDiv();
-                
             } else {
                 let option = this.getAttribute("data-type");
                 resetGame();
-                //alert(`You clicked ${option}`);
             }
         })
     }
-
     
+    /*Generates the random number with 4 digits. The combination might have repeated numbers*/
     window.secretPin = Array.from({length: 4}, () => Math.floor(Math.random() * 10));
-    //window.secretPin = [1,2,1,2];
     createDiv();
-
-    
-       
-
-        
 })
 
 /**
- * The main game "loop", called when the script is first loaded
- * and after the user's answer has been processed
+ * The main game "loop", called each time the
+ * user's answer has been processed
  */
 function runGame() {
-    //let last = document.getElementById('guessing-area').lastChild;
-    //let lastID = parseInt(last.id);
     const secretPin = window.secretPin;
     let control = 0;
     
-    console.log(window.secretPin);
-    
-    
-
+    /*getting the last input rows in the guessing-area*/
     let lastDiv = document.getElementById('guessing-area').lastChild;
     let lastDivID = parseInt(lastDiv.id);
+    
     var container = document.getElementsByClassName("guessing-row")[lastDivID - 1];
-
     let values = [];
+
+    /*looping throught each input elements and passing it to an array*/
     for (let i = 0; i < 4; i++) {
         var inputs = container.getElementsByTagName("input")[i];
-        
-        
-        /*console.log(inputs.value);*/
         values[i] = parseInt(inputs.value);
     }
-    //console.log(values);
         
-    // Loop for array1
+    /*Looping through user inputs values*/
     for(let i = 0; i < values.length; i++) {
          
-        // Loop for array2
-        for(let j = 0; j < window.secretPin.length; j++) {
-            if (values[i] === window.secretPin[j]) { 
-                
-                    console.log("item ",i,"will be orange");
+        /*Looping through random array generated from Array function*/
+        for(let j = 0; j < secretPin.length; j++) {
+
+            /*If customer input number belongs to random array, but in wrong place, color will be orange*/
+            if (values[i] === secretPin[j]) { 
                     container.getElementsByTagName("input")[i].style.color = '#FFA000';
-                  
             }
 
+            /*If customer input number belongs to random array, and in right place, color will be green*/
             if (i === j) {
-                if (values[i] === window.secretPin[j]) {
-                    console.log("item ", values[i], "will be green");
+                if (values[i] === secretPin[j]) {
                     container.getElementsByTagName("input")[i].style.color = '#17F217';
+                    
+                    /*counting how many green input fields occurred*/
                     control += 1
+                    
+                    /*if number is found, then no need to continue looping through arrays*/
                     break;
                 }
             }
+            
+            /*If customer input does not belong to random array, then the input text color will be red*/
             if (!(secretPin.includes(values[i]))) {
-                console.log("item ", values[i], "will be red");
                 container.getElementsByTagName("input")[i].style.color = '#FF0000';
             }
-
-
-        
         }
+
+        /*If player wins, the game end, and invites to play again*/
         if (control == 4) {
-            playAgainWin();
-            container.getElementsByTagName("input")[i].disabled = true;
             
-            break;
+            /*The playAgainWin function will pop-up a message on the window*/
+            playAgainWin();
         }
        
+        /*At the end of the looping through both arrays, the previus input elements are disabled*/
         container.getElementsByTagName("input")[i].disabled = true;
-        
     }
-     
-  
 
-    
-
+    /*A new input rows will be created in case of no win yet*/
     if (control != 4) {
+        
+        /*While the attempts are still under 6, a new input row will be created*/
         if ((lastDivID) < 6){
             incrementDiv();
             
 
         } else {
             
+            /*All attempts were taken and number was not guessed*/
+            /*The playAgainLose function will pop-up a message on the window*/
             playAgainLose();
         }
     }
 }
 
+/**
+ * This function will create the first input row of the game
+ */
 function createDiv() {
     const container = document.getElementById('guessing-area');
     container.innerHTML=`
@@ -131,40 +117,41 @@ function createDiv() {
   
 };
 
+/**
+ * This function will create new input rows, each new row with its unique "id"
+ */
 function incrementDiv() {
+    
+    /*Node is an interface from which a number of DOM API object types inherit. It allows those types to be treated similarly; for example, inheriting the same set of methods, or being tested in the same way. */
+    /*comment extract from Node module*/
     Node.prototype.insertAfter = function(node, referenceNode) {
         if (node)
             this.insertBefore(node, referenceNode && referenceNode.nextSibling);
         return node;
     };
     
-    var referenceNode,
-        newNode;
+    /*Getting the last guessing-row id and incrementing it as id for the next guessing-row*/
+    var referenceNode, newNode;
     let lastDiv = document.getElementById('guessing-area').lastChild;
-    
     let lastDivID = parseInt(lastDiv.id);
     referenceNode = document.getElementById('guessing-area').lastChild;
-    //referenceNode = document.getElementById('guessing-area');
     newNode = document.createElement('div');
     newNode.className = "guessing-row";
     newNode.id = (lastDivID + 1);
-    //alert(newNode.id);
     
+    /*Using HTML template to insert new guessing-row div*/
     newNode.innerHTML = `
             <input type="text" aria-label="Number 1" class="form-num" id="num1" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');" autocomplete="off">
             <input type="text" aria-label="Number 2" class="form-num" id="num2" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');" autocomplete="off">
             <input type="text" aria-label="Number 3" class="form-num" id="num3" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');" autocomplete="off">
             <input type="text" aria-label="Number 4" class="form-num" id="num4" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');" autocomplete="off">
     </div>`;
-    
-    
+        
     referenceNode.parentNode.insertAfter(newNode, referenceNode);
-    //console.log(newNode);
-    x = newNode.getElementsByTagName("input")[0];
-    //console.log(x);
-    x.focus();
-    //referenceNode.getElementsByTagName("input")[0].focus;
     
+    /*focus on the first input field of newly created guessing-row div and calling autoTab function*/
+    x = newNode.getElementsByTagName("input")[0];
+    x.focus();
     autoTab();  
 }
 
@@ -172,10 +159,13 @@ function autoTab() {
         let last = document.getElementById('guessing-area').lastChild;
         let lastID = parseInt(last.id);
         var container = document.getElementsByClassName("guessing-row")[lastID - 1];
-        //console.log(container);
         container.onkeyup = function(jump) {
-        var locate = jump.target;
         
+        /**
+         * Using event.target function in order to implement auto-tab while typing on fiedls
+         * Reference: https://developer.mozilla.org/en-US/docs/Web/API/Event/target
+         */
+        var locate = jump.target;
         var next = locate;
         
             while (next = next.nextElementSibling) {
@@ -184,18 +174,10 @@ function autoTab() {
                 
                 if (next.tagName.toLowerCase() == "input") {
                     next.focus();
-                    
-                    
                     break;
-                    
                 }
-              
-                
             }
             if (event.key === "Enter") {
-
-                
-                
                 runGame();
             }
             

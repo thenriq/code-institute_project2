@@ -7,21 +7,29 @@
     <meta name="description" content="Logic game with purpouse to guess a secret password number">
     <meta name="keywords" content="logic, game, puzzle, fun">
 
-    <!-- font awesome and google fonts -->
+    <!-- font awesome and css style -->
     <script src="https://kit.fontawesome.com/32fe43fbbf.js" crossorigin="anonymous"></script>
     <link rel='shortcut icon' type='image/x-icon' href='favicon.ico' />
     <link rel="stylesheet" href="assets/css/style.css">
     <title>The Mastermind Game</title>
 </head>
+
 <body>
     <h1 class="heading">
         <p><i class="fa-solid fa-brain">The Mastermind Game</i></p>
     </h1>
     
+    <!--Total area of the game-->
     <div class="game-area">
+        
+        <!--left side, user will input values here-->
         <div class="left-area">
+            
+            <!--This area will be populated through Javascript-->
             <div id = "guessing-area"></div>
         </div>
+        
+        <!--game rules, instructions and control buttons-->
         <div class="right-area">
             <div class="game-instructions">
                 <p><strong>Can you break the code?</strong></p>
@@ -34,8 +42,8 @@
                 <p><i class="fa-solid fa-square red-num"></i>Wrong number</p>
             </div>
             <div class="control-buttons">
-                <button data-type="submit" class="btn btn--gray check-answer">Verify your answer</button>
-                <button data-type="reset" class="btn btn--gray">Reset</button>
+                <button data-type="submit" class="btn  check-answer">Verify your answer</button>
+                <button data-type="reset" class="btn">Reset</button>
             </div>
             <div class="alert-info">
                 <p><i class="fa-solid fa-circle-exclamation"></i>Repeated numbers may occur</p>
