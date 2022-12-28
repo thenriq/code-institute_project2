@@ -172,9 +172,11 @@ function autoTab() {
                 if (next == null)
                 break;
                 
-                if (next.tagName.toLowerCase() == "input") {
-                    next.focus();
-                    break;
+                if (event.key != "Backspace") {
+                    if (next.tagName.toLowerCase() == "input") {
+                        next.focus();
+                        break;
+                    }
                 }
             }
             if (event.key === "Enter") {
