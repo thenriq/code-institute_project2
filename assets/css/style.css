@@ -15,7 +15,7 @@ body {
 
 .heading {
     display: block;
-    background-color: blueviolet;
+    background-color: #571397;
     height: 30px;
     width: 80%;
     max-width: 1200px;
@@ -23,7 +23,7 @@ body {
     margin: auto;
     margin-top: 30px;
     padding: 2% 0;
-
+    color: white;
 }
 .game-area {
     height: 80%;
