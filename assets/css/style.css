@@ -22,7 +22,7 @@ body {
     text-align: center;
     margin: auto;
     margin-top: 30px;
-    padding: 2% 0;
+    padding: 3% 0;
     color: white;
 }
 .game-area {
@@ -102,6 +102,7 @@ input:disabled {
     font-weight: bold;
     padding-bottom: 20px;
     color: white;
+    text-align: center;
 }
 
 .fa-solid {
