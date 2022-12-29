@@ -111,7 +111,7 @@ The Mastermind game is a fully responsive javascrip logic games, which will guid
 
 #### Fixed Bugs
 
-   - **CSS no applying if using *autofill***. If "autofill form" is used, the CSS applied to the input box will be the "*internal-autofill*, instead of what was coded in the CSS file. To overturn that, I've disabled the auto-complete form on these input fields, by adding "autocomplete='off'" to the input html tags
+   - **CSS not applying if using *autofill***. If "autofill form" is used, the CSS applied to the input box will be the "*internal-autofill*, instead of what was coded in the CSS file. To overturn that, I've disabled the auto-complete form on these input fields, by adding "autocomplete='off'" to the input html tags
 
 #### Unfixed Bugs
 
