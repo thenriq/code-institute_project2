@@ -247,6 +247,8 @@ input:disabled {
     .right-area {
         width: 100%;
         float: none;
+        height: auto;
+        padding-bottom: 30px;
     }
 
     .game-rules {

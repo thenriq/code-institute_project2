@@ -73,4 +73,16 @@ The Mastermind game is a fully responsive javascrip logic games, which will guid
 
         ![Code reveal](/assets/images/mastermind_code_review.png)
 
+<br>
+
+### Features left to be implemented
+
+- When the game finishes, whether user wins or not, the user will be informed on the right side panel, instead of using pop-up messages
+
+<br>
+
+## Testing
+
+- Tests were performed in different browsers: Chrome, Opera and Safari
+- I confirm that the game works and the result will be correct
     
