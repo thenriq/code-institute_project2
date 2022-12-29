@@ -28,10 +28,16 @@ The Mastermind game is a fully responsive javascrip logic games, which will guid
     - These fields will only accept numbers as input
     
 ![Input fields](/assets/images/mastermind_input_fields.png)
-  
+
+<br>  
+
 - __The Control Session__
 
-   - The control buttons at the right side can be used to run the game or to reset it
+    - This session contains instructions on how to play the game. Also, we can see very clear the color assignment rules, followed by the control buttons
+
+    ![Control Session](/assets/images/mastermind_control_session.png)
+
+   - The control buttons can be used to run the game or to reset it
    - The game can also be run by pressing ENTER on the keyboard
 
 
