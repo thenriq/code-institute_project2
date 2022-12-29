@@ -136,6 +136,6 @@ The live link can be found here - [The Mastermind Game](https://thenriq.github.i
 - The code to make the social media links was taken from the CI [Love Running](https://thenriq.github.io/love-running/) project.
 - The icons in the header and in the right side of page were taken from [Font Awesome](https://fontawesome.com/)
 - Instructions on how to set field input to one digit only was taken from [Stackoverflow](https://stackoverflow.com/questions/42067911/input-field-restrict-to-one-digit)
-- Steps on how to acheve auto-tab in the fields were taken from [Developer Mozilla](https://developer.mozilla.org/en-US/docs/Web/API/Event/srcElement)
+- Steps on how to achieve auto-tab in the fields were taken from [Developer Mozilla](https://developer.mozilla.org/en-US/docs/Web/API/Event/srcElement)
 
 <br>
