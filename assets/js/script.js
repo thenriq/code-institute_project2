@@ -7,18 +7,20 @@ document.addEventListener("DOMContentLoaded", function() {
             if (this.getAttribute("data-type") === "submit") {
                 runGame();
             } else {
-                let option = this.getAttribute("data-type");
                 resetGame();
             }
-        })
+        });
     }
 
-    /*Generates the random number with 4 digits. The combination might have repeated numbers*/
-    window.secretPin = Array.from({
+    /**
+     * Generates the random number with 4 digits. The combination might have repeated numbers
+     * Based on solution from https://stackoverflow.com/questions/5836833/create-an-array-with-random-values
+     */
+     window.secretPin = Array.from({
         length: 4
     }, () => Math.floor(Math.random() * 10));
     createDiv();
-})
+});
 
 /**
  * The main game "loop", called each time the
@@ -57,7 +59,7 @@ function runGame() {
                     container.getElementsByTagName("input")[i].style.color = '#17F217';
 
                     /*counting how many green input fields occurred*/
-                    control += 1
+                    control += 1;
 
                     /*if number is found, then no need to continue looping through arrays*/
                     break;
@@ -99,6 +101,7 @@ function runGame() {
 
 /**
  * This function will create the first input row of the game
+ * The solution to restrict field to 1 digit was taken from https://stackoverflow.com/questions/42067911/input-field-restrict-to-one-digit
  */
 function createDiv() {
     const container = document.getElementById('guessing-area');
@@ -109,9 +112,9 @@ function createDiv() {
                 <input type="text" aria-label="Number 3" class="form-num" id="num3" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');" autocomplete="off">
                 <input type="text" aria-label="Number 4" class="form-num" id="num4" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');" autocomplete="off">
         </div>`;
-    document.getElementById("num1").focus()
+    document.getElementById("num1").focus();
     autoTab();
-};
+}
 
 /**
  * This function will create new input rows, each new row with its unique "id"
@@ -120,6 +123,7 @@ function incrementDiv() {
 
     /*Node is an interface from which a number of DOM API object types inherit. It allows those types to be treated similarly; for example, inheriting the same set of methods, or being tested in the same way. */
     /*comment extract from Node module*/
+    /*Based on solution from https://stackoverflow.com/questions/4793604/how-to-insert-an-element-after-another-element-in-javascript-without-using-a-lib*/
     Node.prototype.insertAfter = function(node, referenceNode) {
         if (node)
             this.insertBefore(node, referenceNode && referenceNode.nextSibling);
@@ -136,6 +140,10 @@ function incrementDiv() {
     newNode.id = (lastDivID + 1);
 
     /*Using HTML template to insert new guessing-row div*/
+    /**
+     * 
+     * 
+     */
     newNode.innerHTML = `
             <input type="text" aria-label="Number 1" class="form-num" id="num1" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');" autocomplete="off">
             <input type="text" aria-label="Number 2" class="form-num" id="num2" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');" autocomplete="off">
@@ -146,7 +154,7 @@ function incrementDiv() {
     referenceNode.parentNode.insertAfter(newNode, referenceNode);
 
     /*focus on the first input field of newly created guessing-row div and calling autoTab function*/
-    x = newNode.getElementsByTagName("input")[0];
+    let x = newNode.getElementsByTagName("input")[0];
     x.focus();
     autoTab();
 }
@@ -159,7 +167,7 @@ function autoTab() {
 
         /**
          * Using event.target function in order to implement auto-tab while typing on fiedls
-         * Reference: https://developer.mozilla.org/en-US/docs/Web/API/Event/target
+         * Reference: https://developer.mozilla.org/en-US/docs/Web/API/Event/target and https://stackoverflow.com/questions/23888537/auto-tab-to-next-input-field-when-fill-4-characters
          */
         var locate = jump.target;
         var next = locate;
@@ -181,7 +189,7 @@ function autoTab() {
         if (event.key === "Enter") {
             runGame();
         }
-    }
+    };
 }
 
 /**

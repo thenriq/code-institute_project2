@@ -17,8 +17,9 @@ body {
     display: block;
     background-color: #571397;
     height: 30px;
-    width: 80%;
-    max-width: 1200px;
+    /*width: 80%;*/
+    width: 100%;
+    /*max-width: 1200px;*/
     text-align: center;
     margin: auto;
     padding: 3% 0;
@@ -27,9 +28,11 @@ body {
 
 /*The game will not take up the full screen width on desktop*/
 .game-area {
-    height: 80%;
-    width: 80%;
-    max-width: 1200px;
+    /*height: 80%;*/
+    height: auto;
+    /*width: 80%;*/
+    width: 100%;
+    /*max-width: 1200px;*/
     background-color: aqua;
     position: relative;
     margin: auto;
