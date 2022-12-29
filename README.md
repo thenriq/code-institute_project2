@@ -15,3 +15,34 @@ The Mastermind game is a fully responsive javascrip logic games, which will guid
 ## Features
 
 ### Existing features
+
+- __Page Header and The Mastermind game logo__
+
+    - On a nice purple background, the game logo can be seeing in highlight, making it easy to see right at top of the page
+
+![Logo](/assets/images/mastermind_logo.png)
+
+- __The Game Area__
+
+    - This is the section where user will interact with the game. The auto-tab feature makes it easy to fill in all the values for the guess. 
+    - These fields will only accept numbers as input
+    
+![Input fields](/assets/images/mastermind_input_fields.png)
+  
+- __The Control Session__
+
+   - The control buttons at the right side can be used to run the game or to reset it
+   - The game can also be run by pressing ENTER on the keyboard
+
+
+![Input fields](/assets/images/mastermind_control_buttons.png)
+
+- __Running the game__
+
+    - Once the game runs, the numbers inputted by user will show the color accordingly with its position:
+        - GREEN, if the number belongs to the code and if is in the right position;
+        - ORANGE, if the number belongs to the code but on a different position
+        - RED, if the number does not belong to the code
+
+![Input fields](/assets/images/mastermind_input_color.png)
+    
