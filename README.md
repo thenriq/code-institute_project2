@@ -83,6 +83,16 @@ The Mastermind game is a fully responsive javascrip logic games, which will guid
 
 ## Testing
 
-- Tests were performed in different browsers: Chrome, Opera and Safari
-- I confirm that the game works and the result will be correct
-    
+- Tests were performed in different browsers: Chrome, Opera and Safari.
+- I confirm that the game works and the result will be correct.
+- I can confirm that, no matter which browse, all elements will be fully readable and easy to understand.
+- I tested it through lighthouse in devtools and the colors and fonts chosen are easy to read.
+
+![Code reveal](/assets/images/lighthouse_test.png)
+
+- I used devtools device toolbar to ensure this project is fully responsive, looks good and works on all standard screen sizes
+
+## Validator testing
+- HTML
+    - No errors found when passing through the official [W3C validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Fcode-institute-org.github.io%2Flove-maths%2F)
+

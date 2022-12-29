@@ -1,3 +1,7 @@
+/*jshint esversion: 6 */
+
+/*Comment above to fix warnings raised from JSHint*/
+
 // Wait for the DOM to finish loading before running the game
 // Get the buttom elements and add event listeners to them
 document.addEventListener("DOMContentLoaded", function() {
@@ -107,10 +111,10 @@ function createDiv() {
     const container = document.getElementById('guessing-area');
     container.innerHTML = `
         <div class="guessing-row" id="1">
-                <input type="number" name="input-label" aria-label="Number 1" class="form-num" id="num1" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');" autocomplete="off">
-                <input type="number" aria-label="Number 2" class="form-num" id="num2" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');" autocomplete="off">
-                <input type="number" aria-label="Number 3" class="form-num" id="num3" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');" autocomplete="off">
-                <input type="number" aria-label="Number 4" class="form-num" id="num4" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');" autocomplete="off">
+                <input type="text" aria-label="Number 1" class="form-num" id="num1" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');" autocomplete="off">
+                <input type="text" aria-label="Number 2" class="form-num" id="num2" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');" autocomplete="off">
+                <input type="text" aria-label="Number 3" class="form-num" id="num3" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');" autocomplete="off">
+                <input type="text" aria-label="Number 4" class="form-num" id="num4" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');" autocomplete="off">
         </div>`;
     document.getElementById("num1").focus();
     autoTab();
@@ -145,10 +149,10 @@ function incrementDiv() {
      * 
      */
     newNode.innerHTML = `
-            <input type="number" aria-label="Number 1" class="form-num" id="num1" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');" autocomplete="off">
-            <input type="number" aria-label="Number 2" class="form-num" id="num2" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');" autocomplete="off">
-            <input type="number" aria-label="Number 3" class="form-num" id="num3" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');" autocomplete="off">
-            <input type="number" aria-label="Number 4" class="form-num" id="num4" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');" autocomplete="off">
+            <input type="text" aria-label="Number 1" class="form-num" id="num1" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');" autocomplete="off">
+            <input type="text" aria-label="Number 2" class="form-num" id="num2" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');" autocomplete="off">
+            <input type="text" aria-label="Number 3" class="form-num" id="num3" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');" autocomplete="off">
+            <input type="text" aria-label="Number 4" class="form-num" id="num4" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');" autocomplete="off">
     </div>`;
 
     referenceNode.parentNode.insertAfter(newNode, referenceNode);
@@ -173,8 +177,8 @@ function autoTab() {
         var next = locate;
 
         while (next = next.nextElementSibling) {
-            if (next == null)
-                break;
+            //if (next == null)
+                //break;
 
             /*auto-focus will not jump if pressed backspace*/
             if (event.key != "Backspace") {
