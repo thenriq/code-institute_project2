@@ -177,9 +177,7 @@ function autoTab() {
         var next = locate;
 
         while (next = next.nextElementSibling) {
-            //if (next == null)
-                //break;
-
+            
             /*auto-focus will not jump if pressed backspace*/
             if (event.key != "Backspace") {
                 if (next.tagName.toLowerCase() == "input") {

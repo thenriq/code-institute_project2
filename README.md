@@ -94,5 +94,48 @@ The Mastermind game is a fully responsive javascrip logic games, which will guid
 
 ## Validator testing
 - HTML
-    - No errors found when passing through the official [W3C validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Fcode-institute-org.github.io%2Flove-maths%2F)
+    - No errors found when passing through the official [W3C validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Fthenriq.github.io%2Fcode-institute_project2%2F)
 
+- CSS
+    - No errors were found when passing through the official  [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fthenriq.github.io%2Fcode-institute_project2%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=pt-BR)
+
+- JavaScript
+    - No errors were found when passing through the official [Jshint validator](https://jshint.com/)
+        - The following metrics were returned:
+        - There are 12 functions in this file.
+        - Function with the largest signature take 2 arguments, while the median is 0.
+        - Largest function has 27 statements in it, while the median is 4.
+        - The most complex function has a cyclomatic complexity value of 11 while the median is 2.
+
+### Bugs
+
+#### Fixed Bugs
+
+   - **CSS no applying if using *autofill***. If "autofill form" is used, the CSS applied to the input box will be the "*internal-autofill*, instead of what was coded in the CSS file. To overturn that, I've disabled the auto-complete form on these input fields, by adding "autocomplete='off'" to the input html tags
+
+#### Unfixed Bugs
+
+   - No other bugs were found
+
+## Deployment
+
+- The site was deployed to GitHub pages. The steps to deploy are as follows:
+    - In the GitHub repository, navigate to the Settings tab;
+    - Under "Code and automation" (left panel), click on "Pages";
+    - Under "Builds and deployment", from the dropdown menu, select the Master Branch;
+    - Once the master branch has been selected, the page provided the link to the completed website.
+
+<br>
+
+The live link can be found here - [The Mastermind Game](https://thenriq.github.io/code-institute_project2/)
+
+
+## Credits 
+### Content
+
+- The code to make the social media links was taken from the CI [Love Running](https://thenriq.github.io/love-running/) project.
+- The icons in the header and in the right side of page were taken from [Font Awesome](https://fontawesome.com/)
+- Instructions on how to set field input to one digit only was taken from [Stackoverflow](https://stackoverflow.com/questions/42067911/input-field-restrict-to-one-digit)
+- Steps on how to acheve auto-tab in the fields were taken from [Developer Mozilla](https://developer.mozilla.org/en-US/docs/Web/API/Event/srcElement)
+
+<br>
