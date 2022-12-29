@@ -143,11 +143,8 @@ function incrementDiv() {
     newNode.className = "guessing-row";
     newNode.id = (lastDivID + 1);
 
-    /*Using HTML template to insert new guessing-row div*/
-    /**
-     * 
-     * 
-     */
+    
+    /*Using HTML template to insert new guessing-row div*/ 
     newNode.innerHTML = `
             <input type="text" aria-label="Number 1" class="form-num" id="num1" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');" autocomplete="off">
             <input type="text" aria-label="Number 2" class="form-num" id="num2" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');" autocomplete="off">

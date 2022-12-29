@@ -186,6 +186,7 @@ input:disabled {
     color: orange;
 }
 
+/* Media queries */
 
 @media (max-width: 900px) {
     .form-num {
