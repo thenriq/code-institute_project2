@@ -107,10 +107,10 @@ function createDiv() {
     const container = document.getElementById('guessing-area');
     container.innerHTML = `
         <div class="guessing-row" id="1">
-                <input type="text" aria-label="Number 1" class="form-num" id="num1" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');" autocomplete="off">
-                <input type="text" aria-label="Number 2" class="form-num" id="num2" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');" autocomplete="off">
-                <input type="text" aria-label="Number 3" class="form-num" id="num3" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');" autocomplete="off">
-                <input type="text" aria-label="Number 4" class="form-num" id="num4" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');" autocomplete="off">
+                <input type="number" aria-label="Number 1" class="form-num" id="num1" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');" autocomplete="off">
+                <input type="number" aria-label="Number 2" class="form-num" id="num2" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');" autocomplete="off">
+                <input type="number" aria-label="Number 3" class="form-num" id="num3" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');" autocomplete="off">
+                <input type="number" aria-label="Number 4" class="form-num" id="num4" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');" autocomplete="off">
         </div>`;
     document.getElementById("num1").focus();
     autoTab();
@@ -145,10 +145,10 @@ function incrementDiv() {
      * 
      */
     newNode.innerHTML = `
-            <input type="text" aria-label="Number 1" class="form-num" id="num1" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');" autocomplete="off">
-            <input type="text" aria-label="Number 2" class="form-num" id="num2" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');" autocomplete="off">
-            <input type="text" aria-label="Number 3" class="form-num" id="num3" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');" autocomplete="off">
-            <input type="text" aria-label="Number 4" class="form-num" id="num4" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');" autocomplete="off">
+            <input type="number" aria-label="Number 1" class="form-num" id="num1" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');" autocomplete="off">
+            <input type="number" aria-label="Number 2" class="form-num" id="num2" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');" autocomplete="off">
+            <input type="number" aria-label="Number 3" class="form-num" id="num3" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');" autocomplete="off">
+            <input type="number" aria-label="Number 4" class="form-num" id="num4" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');" autocomplete="off">
     </div>`;
 
     referenceNode.parentNode.insertAfter(newNode, referenceNode);
